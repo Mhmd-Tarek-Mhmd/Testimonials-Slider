@@ -17,6 +17,16 @@
         padding: 0;
         box-sizing: border-box;
       }
+
+      /* Utilities */
+      .sr-only {
+        width: 1;
+        height: 1;
+        position: absolute;
+        clip: rect(0 0 0 0);
+      }
+
+      /* Slider */
       .view {
         display: grid;
         min-height: 100vh;
@@ -200,58 +210,63 @@
     </style>
   </head>
   <body>
-    <div class="view">
-      <div class="wrapper">
-        <div class="bg"></div>
+    <header class="sr-only">
+      <h1>Testimonials Slider</h1>
+    </header>
+    <main>
+      <div class="view">
+        <div class="wrapper">
+          <div class="bg"></div>
 
-        <div style="position: relative">
-          <img src="" alt="" class="person" />
+          <div style="position: relative">
+            <img src="" alt="" class="person" />
 
-          <div class="controls">
-            <button
-              class="prev"
-              aria-label="Previous slide"
-              onclick="current--"
-              disabled
-            >
-              <img src="images/icon-prev.svg" alt="" />
-            </button>
-            <button class="next" aria-label="Next slide" onclick="current++">
-              <img src="images/icon-next.svg" alt="" />
-            </button>
+            <div class="controls">
+              <button
+                class="prev"
+                aria-label="Previous slide"
+                onclick="current--"
+                disabled
+              >
+                <img src="images/icon-prev.svg" alt="" />
+              </button>
+              <button class="next" aria-label="Next slide" onclick="current++">
+                <img src="images/icon-next.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text"></div>
+
+        <div class="curve"></div>
+      </div>
+
+      <div class="slides" hidden>
+        <div class="slide" data-person="tanya">
+          <q>
+            I’ve been interested in coding for a while but never taken the jump,
+            until now. I couldn’t recommend this course enough. I’m now in the
+            job of my dreams and so excited about the future.
+          </q>
+          <div>
+            <strong>Tanya Sinclair</strong>
+            <span>UX Engineer</span>
+          </div>
+        </div>
+        <div class="slide" data-person="john">
+          <q>
+            If you want to lay the best foundation possible I’d recommend taking
+            this course. The depth the instructors go into is incredible. I now
+            feel so confident about starting up as a professional developer.
+          </q>
+          <div>
+            <strong>John Tarkpor</strong>
+            <span>Junior Front-end Developer</span>
           </div>
         </div>
       </div>
-
-      <div class="text"></div>
-
-      <div class="curve"></div>
-    </div>
-
-    <div class="slides" hidden>
-      <div class="slide" data-person="tanya">
-        <q>
-          I’ve been interested in coding for a while but never taken the jump,
-          until now. I couldn’t recommend this course enough. I’m now in the job
-          of my dreams and so excited about the future.
-        </q>
-        <div>
-          <strong>Tanya Sinclair</strong>
-          <span>UX Engineer</span>
-        </div>
-      </div>
-      <div class="slide" data-person="john">
-        <q>
-          If you want to lay the best foundation possible I’d recommend taking
-          this course. The depth the instructors go into is incredible. I now
-          feel so confident about starting up as a professional developer.
-        </q>
-        <div>
-          <strong>John Tarkpor</strong>
-          <span>Junior Front-end Developer</span>
-        </div>
-      </div>
-    </div>
+    </main>
   </body>
   <script>
     let current = 0;
