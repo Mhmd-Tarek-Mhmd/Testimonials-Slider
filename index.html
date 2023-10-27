@@ -216,7 +216,7 @@
     <main>
       <div class="view">
         <div class="wrapper">
-          <div class="bg"></div>
+          <div aria-hidden="true" class="bg"></div>
 
           <div style="position: relative">
             <img src="" alt="" class="person" />
@@ -239,7 +239,7 @@
 
         <div class="text"></div>
 
-        <div class="curve"></div>
+        <div aria-hidden="true" class="curve"></div>
       </div>
 
       <div class="slides" hidden>
@@ -288,11 +288,11 @@
         const prev = document.querySelector(".prev");
 
         current === slides.length - 1
-          ? next.setAttribute("disabled", true)
+          ? next.setAttribute("disabled", "")
           : next.removeAttribute("disabled");
 
         current === 0
-          ? prev.setAttribute("disabled", true)
+          ? prev.setAttribute("disabled", "")
           : prev.removeAttribute("disabled");
       }
 
